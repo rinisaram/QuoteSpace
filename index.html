@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuoteScape: Explore the Realm of Wisdom</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color:#e3ebfa;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .logo h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  #quote-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    margin-top: 60px /* Adjust as needed */
+  }
+
+  #quote {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  #author {
+    font-style: italic;
+    color: #666;
+  }
+
+  #generate {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .bottom-image {
+    position: relative;
+    bottom: 2px;
+    width: 500px; /* Adjust size as needed */
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+   
+    <h1>QuoteScape</h1>
+  </div>
+</header>
+
+<div id="quote-box">
+  <div id="quote"></div>
+  <div id="author"></div>
+  <button id="generate">Generate Random Quote</button>
+</div>
+<img class="bottom-image" src="8401-removebg-preview.png" alt="Bottom Image">
+<script>
+  const quotes = [
+    {
+      text: "The only way to do great work is to love what you do.",
+      author: "Steve Jobs"
+    },
+    {
+      text: "Life is what happens when you're busy making other plans.",
+      author: "John Lennon"
+    },
+    {
+      text: "In the end, it's not the years in your life that count. It's the life in your years.",
+      author: "Abraham Lincoln"
+    },
+    {
+      text: "You only live once, but if you do it right, once is enough.",
+      author: "Mae West"
+    },
+    {
+      text: "The future belongs to those who believe in the beauty of their dreams.",
+      author: "Eleanor Roosevelt"
+    }
+  ];
+
+  const quoteElement = document.getElementById('quote');
+  const authorElement = document.getElementById('author');
+  const generateButton = document.getElementById('generate');
+
+  function generateRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const randomQuote = quotes[randomIndex];
+    quoteElement.textContent = randomQuote.text;
+    authorElement.textContent = '- ' + randomQuote.author;
+  }
+
+  generateButton.addEventListener('click', generateRandomQuote);
+</script>
+
+</body>
+</html>
